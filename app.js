@@ -8,6 +8,12 @@ appHelper.runApp(function(app, db) {
 		resp.end();
 	});
 
+	app.get("/icecream/:flavor/:topping", function (req, resp) {
+		resp.render("icecream", {
+			ice_cream: req.params.flavor,
+			topping: req.params.topping,});
+		resp.end();
+	});
 
 	app.get("/html", function (req, resp) {
 		resp.write("<html><body><h1>Woo! Node is cool!</h1><button>Click me</button></body></html>");
